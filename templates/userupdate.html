@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+<body xmlns="http://www.w3.org/1999/html">
+<div class="container w-40 h-50">
+    <div class="d-flex justify-content-center align-items-center mt-5 ">
+        <div class="card">
+            <h3 class="text-center">User Update</h3>
+            <form action="" method="post">
+                <div>
+
+                        {% csrf_token %}
+                        <div class="form px-4 outer_div" id="outer_div">
+
+                            <div class="form-control mb-2">
+                                {{form.name}}
+                            </div>
+                            <div class="form-control mb-2">
+                                {{form.email}}
+                            </div>
+                            <div class="form-control mb-2">
+                                {{form.password}}
+                            </div>
+
+                            {% for mobile in numbers %}
+                            <div class="form-control mb-2" >
+                                {{mobile}}
+                            </div>
+                            {% endfor %}
+
+
+                        </div>
+
+                        <div class="text-center my-3">
+                            <input type="submit" class="btn btn-success" value="Update">
+<!--                            <button class="btn btn-success">Update</button>-->
+                        </div>
+                </div>
+             </form>
+
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+{% endblock %}
